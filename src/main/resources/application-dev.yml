@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://106.15.108.35:3306/demo?serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+#  flyway:
+#    是否启用flyway
+    enabled: true
+#    删除指定 schema 下所有表,生产环境设置为true禁止掉,默认为false
+    clean-disabled: true
+#    指定脚本目录
+    locations: classpath:db/migration
+#    flyway 版本控制信息表[默认:flyway_schema_history],如果表不存在,在执行migration 命令之前,会先执行baseline 命令
+    table: flyway_schema_history
+#    为true 时,在需要baseline时,自动执行一次
+    baseline-on-migrate: true
+#    指定baseline版本号,默认为1,低于设定的版本sql将忽略不执行
+    baseline-version: 1
+#    是否允许不按顺序迁移 开发建议 true  生产建议 false
+#    out-of-order: false
+#    执行迁移时是否自动调用验证 默认为true
+#    validate-on-migrate: true
+#    指定影响的shcemas,默认在第一个schemas创建metadata表,当clean-diasabled为true时,依次执行
+#    schemas: flyway
+#    默认编码为utf-8
+#    encoding: utf-8
+
+
+
